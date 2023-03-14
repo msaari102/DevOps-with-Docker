@@ -1,0 +1,5 @@
+C:\Users\mikko>docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\mikko>docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
