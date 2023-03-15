@@ -1,0 +1,9 @@
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 years ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 years ago   15.7MB
+
+C:\Users\mikko>docker run -d --rm -it --name looper-it devopsdockeruh/simple-web-service:alpine
+f586fd6733fe62f1925281590d7e1a38fd4a93f6d29f08e97d24e3b517f5ab84
+
+C:\Users\mikko>docker exec -it looper-it sh
+/usr/src/app # tail -f ./text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'

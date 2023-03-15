@@ -1,0 +1,4 @@
+C:\Users\mikko>docker run -it ubuntu sh -c "while true; do echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website; done"
+C:\Users\mikko>docker exec -it 5e bash
+root@5e003cb5af72:/# apt-get update
+root@5e003cb5af72:/# apt-get -y install curl
