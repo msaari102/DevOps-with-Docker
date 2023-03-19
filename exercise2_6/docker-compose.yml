@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+
+    backend:
+      image: example-backend
+      ports:
+        - 8080:8080
+      environment:
+        - REDIS_HOST=redis
+        - POSTGRES_HOST=db #The hostname for postgres database. (port will default to 5432 the default for Postgres)
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=example #database password. Default: postgres
+        - POSTGRES_DATABASE=postgres_db
+      depends_on:
+        - db  
+
+
+    frontend:
+      image: example-frontend
+      ports:
+        - 5000:5000    
+
+    redis:
+      image: redis
+
+    db:
+      image: postgres:13.2-alpine
+      restart: unless-stopped
+      environment:
+        - POSTGRES_PASSWORD=example
+        - POSTGRES_DB=postgres_db
+      container_name: postgres_db
+  

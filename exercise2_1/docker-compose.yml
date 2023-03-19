@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+
+    simple-web-service:
+      image: devopsdockeruh/simple-web-service
+      volumes:
+        - C:\\DevOps\\Docker\\exercise2_1\\text.log:/usr/src/app/text.log
