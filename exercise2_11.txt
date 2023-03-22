@@ -1,0 +1,1 @@
+Made a development container for Ruby ie. running ruby in a container with bind mounted volume for source code which is edited with Visual studio code in windows.
