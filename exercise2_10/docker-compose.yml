@@ -4,9 +4,9 @@ services:
 
     backend:
       image: example-backend
-      build:
-        context: backend
-        dockerfile: ..\..\example-backend\Dockerfile
+      #build:
+      #  context: backend
+      #  dockerfile: ..\..\example-backend\Dockerfile
 
       environment:
         - REDIS_HOST=redis

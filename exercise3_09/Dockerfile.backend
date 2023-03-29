@@ -1,0 +1,23 @@
+# Golang
+FROM golang:alpine3.16 as build-stage
+
+WORKDIR /usr/src/app
+
+EXPOSE 8080
+
+# Copy all of the source code
+COPY . .
+
+RUN go build && adduser appuser -D
+ENV PORT=8080
+ENV REQUEST_ORIGIN=https://example.com
+
+FROM scratch
+WORKDIR /usr/src/app
+COPY --from=build-stage /usr/src/app/ /usr/src/app/
+COPY --from=0 /etc/passwd /etc/passwd
+
+USER appuser
+
+# And finally the command to run the application
+CMD ["./server"]    
