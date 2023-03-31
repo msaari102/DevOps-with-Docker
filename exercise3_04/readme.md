@@ -1,0 +1,1 @@
+docker run -e DOCKER_USER=username -e DOCKER_PWD=password -v /var/run/docker.sock:/var/run/docker.sock builder https://github.com/msaari102/express-app.git mst2343/docker_builder
